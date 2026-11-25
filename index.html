@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nawal Ramadhan — Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Nawal Ramadhan</span>
+      </div>
+      <nav class="nav-buttons">
+        <button class="btn-nav active" data-target="about-section">About</button>
+        <button class="btn-nav" data-target="projects-section">Projects</button>
+        <button class="btn-nav" data-target="journal-section">Journal</button>
+      </nav>
+    </header>
+
+    <!-- Hero Card -->
+    <section id="about-section" class="hero">
+      <div class="card card-blue-tint">
+        <span class="pill">Personal Portfolio</span>
+        <h1>Hi, I'm <span>Nawal Ramadhan</span>.</h1>
+        <p>
+          Creative thinker, builder, and storyteller drawn to calm blues, warm beige tones,
+          and deep burgundy details. Explore my featured cards below or write a fresh entry
+          in my personal journal.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-burgundy" data-target="journal-section">Open Journal</button>
+          <button class="btn-ghost" data-target="projects-section">Explore Cards</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-slot">
+          <span class="image-label">NAWAL!</span>
+          <img src="./maroon.jpg" alt="me">
+          <span class="image-hint"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Cards: Quick Intro + Mood Deck -->
+    <section class="grid-2">
+      <div class="card">
+        <span class="tag">Signature Palette</span>
+        <h3>Beige, Calm Blue &amp; Burgundy</h3>
+        <p>
+          Warm sand and beige keep things grounded, soft slate-blue brings calm clarity,
+          and burgundy adds just enough bold personality without feeling loud.
+        </p>
+        <div class="image-slot image-slot-sm">
+          <span class="image-label"></span>
+          <img src="./iloveme.jpg" alt="beige color palette">
+          <span class="image-hint"></span>
+        </div>
+        <button class="btn-ghost" id="shuffle-quote-btn">SOME COOL INSPOS HERE RIGHT!?</button>
+        <p id="inspo-text" class="inspo-quote">
+          "Quiet focus and bold details always win."
+        </p>
+      </div>
+
+      <div class="creative-stack">
+      <div class="card card-blue-tint mood-card">
+        <span class="tag">Interactive Card</span>
+        <h3>Current Creative Mood</h3>
+        <p>Tap a mood button to switch My studio note and focus tip:</p>
+        <div class="mood-pills" id="mood-pills">
+          <button class="mood-btn selected" data-mood="focused">Calm &amp; Focused</button>
+          <button class="mood-btn" data-mood="curious">Curious &amp; Playful</button>
+          <button class="mood-btn" data-mood="reflective">Reflective</button>
+        </div>
+        <div class="note-box" id="mood-output" aria-live="polite">
+          <strong>Calm &amp; Focused:</strong> Deep slate-blue energy.!.
+          <p>My dream is to become a successful technology
+          professional, creating innovetive websites that make 
+          people's lives easier. I want to improve my coding skills, 
+          explore new ideas and use technology to solve real-world
+          problems. My goal is to become a creative and skilled
+          developer who makes a positive impact on the world through technology.</p>
+        </div>
+        <template id="mood-focused-template">
+          <strong>Calm &amp; Focused:</strong> Deep slate-blue energy.!.
+          <p>My dream is to become a successful technology
+          professional, creating innovetive websites that make 
+          people's lives easier. I want to improve my coding skills, 
+          explore new ideas and use technology to solve real-world
+          problems. My goal is to become a creative and skilled
+          developer who makes a positive impact on the world through technology.</p>
+        </template>
+        <template id="mood-curious-template">
+          <strong>Curious &amp; Playful:</strong> Vibrant hues and playful elements.
+          <p>I love exploring new ideas, asking questions and discovering
+            creative ways to do things. I enjoy adding curious and playful elements 
+            to my work, experimenting with different designs and trying out new ideas.
+            I believe that creativity makes learning more exciting, and i always 
+            leave room for a little fun, imagination and suprises in everything I create.!!</p>
+        </template>
+        <template id="mood-reflective-template">
+          <strong>Reflective:</strong> A quiet moment to notice how far I've come.
+          <p>I like taking time to think about what I have learned, celebrate small
+            steps, and choose what I want to explore next.</p>
+        </template>
+      </div>
+
+      <div class="card hobby-card">
+        <span class="tag">Creative Outlets</span>
+        <h3>Drawing, Skating &amp; Writing</h3>
+        <p>
+          I love drawing because it lets me bring ideas to life, skating because it
+          gives me a fun way to move and feel free, and writing because it helps me
+          capture my thoughts and stories.💕 These hobbies keep me inspired and make
+          space for creativity in my everyday life.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="tag">My Aspirations</span>
+        <h3>What Makes Me Happy</h3>
+        <p>
+          I aspire to become a creative technology professional and build things
+          that make people's lives easier. Being Muslim is an important part of who
+          I am, and spending time with my cool friends and feeling good about how I
+          look are things that bring me happiness and confidence.
+        </p>
+      </div>
+      </div>
+    </section>
+
+    <!-- Projects / Highlights Cards -->
+    <div id="projects-section" class="section-head">
+      <div>
+        <h2>Featured Cards</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="project-filters" role="group" aria-label="Filter featured cards">
+        <button type="button" class="btn-ghost filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="btn-ghost filter-btn" data-filter="design" aria-pressed="false">Design</button>
+        <button type="button" class="btn-ghost filter-btn" data-filter="creative" aria-pressed="false">Creative</button>
+      </div>
+    </div>
+
+    <section class="grid-3" id="cards-grid">
+      <article class="card" data-category="design">
+        <div class="image-slot image-slot-sm">
+            <img src="./pinterest.jpg" alt="pinterest project preview">
+          <span class="image-label"></span>
+          <span class="image-hint">pretty</span>
+        </div>
+        <span class="tag">Fav colors!</span>
+        <h3>Blueee</h3>
+        <h3>Beigeee.</h3>
+        <h3>Burgundy!</h3>
+        <button class="btn-ghost toggle-detail-btn">SO COOL!</button>
+        <p class="extra-detail">
+          Built around balanced spacing and clear visual hierarchy.
+        </p>
+      </article>
+
+      <article class="card card-blue-tint" data-category="creative">
+        <div class="image-slot image-slot-sm">
+          <span class="image-label"></span>
+          <img src="./get to know me.jpg" alt="about meee">
+          <span class="image-hint">Ramaa!</span>
+        </div>
+        <span class="tag">Just meee!</span>
+        <h3>HEY, I'M NAWAL!</h3>
+        <p>A little bit of humor, a lot of curiosity, and 
+            a mind full of dreams. I love reading, good
+            conversations and making memories. Simply me, 
+            always growing and staying unique!</p>
+        <button class="btn-ghost toggle-detail-btn">ULALAAA!
+        </button>
+        <p class="extra-detail">
+          I really enjoyed working on this project and i love this project!
+        </p>
+      </article>
+
+      <article class="card" data-category="design">
+        <div class="image-slot image-slot-sm">
+          <span class="image-label"></span>
+          <img src="./PICSSSS.jpg" alt="cameraaa">
+          <span class="image-hint">I LOVE TAKING PICS!</span>
+        </div>
+        <span class="tag">Design</span>
+        <h3>Camera Captures</h3>
+        <p>I love capturing little moments through
+            camera. From beautiful views to random memories
+            , I believe every picture has a story
+            worth keeping.</p>
+        <button class="btn-ghost toggle-detail-btn">A PIC A DAY KEEPS THE MOOD AWAKE!</button>
+        <p class="extra-detail">
+          Simple interactions that feel alive right in the browser.
+        </p>
+      </article>
+    </section>
+
+    <!-- Functional Journal Section -->
+    <div id="journal-section" class="section-head">
+      <div>
+        <h2>Nawal's Journal</h2>
+        <div class="accent-bar"></div>
+      </div>
+    </div>
+
+    <section class="grid-2">
+      <!-- Write & Save Entry Card -->
+      <div class="card card-blue-tint">
+        <span class="tag">Write Entry</span>
+        <h3>New Journal Entry</h3>
+        <p>Write your thoughts below and hit save—entries stay stored in your browser.</p>
+
+        <form class="journal-form" id="journal-form">
+          <input
+            type="text"
+            id="entry-title"
+            placeholder="Entry title (e.g., Today's win or random thought)"
+            required
+          />
+          <div class="form-row">
+            <select id="entry-mood">
+              <option value="Calm Blue">Mood: Calm Blue</option>
+              <option value="Burgundy Bold">Mood: Burgundy Bold</option>
+              <option value="Warm Beige">Mood: Warm Beige</option>
+              <option value="Inspired">Mood: Inspired</option>
+        
+            </select>
+            <button type="submit" class="btn-burgundy">Save Entry</button>
+          </div>
+          <textarea
+            id="entry-body"
+            placeholder="Write your journal entry here..."
+            required
+          ></textarea>
+          <div class="status-toast" id="journal-status"></div>
+        </form>
+      </div>
+
+      <!-- Saved Entries Card -->
+      <div class="card">
+        <span class="tag">Saved Entries</span>
+        <h3>Your Journal Archive</h3>
+        <p>All saved entries appear here automatically with timestamps.</p>
+        <div class="journal-list" id="journal-list"></div>
+      </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
